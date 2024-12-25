@@ -1,0 +1,354 @@
+
+:root{
+--accent-color:  #2e4156;
+--background-color: #999;
+--color:#aab7b7;
+--blue-coloe: #1a2d42d8;
+--signupback-color:#072f5f;
+
+}
+
+
+*{
+    margin: 0;
+   padding: 0;
+    font-family: 'poppins', sans-serif ;
+    box-sizing: border-box;
+}
+html{
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    background: #000000;
+    min-height: 100vh;
+    width: 100%;
+    color: lavender;
+    position: relative;
+    background-image: url('images/background1.png');
+    background-size: cover;
+    animation: movingBackground 10s infinite;
+}
+@keyframes moveBackground{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+nav{
+    display: flex;
+    align-items: center;
+    padding: 20px 8%;
+}
+.nav-container{
+    padding: 0%;
+    margin-left: 500px;
+    background-color: #2e4156; 
+}
+/*nav .menu-img{
+    width: 25px;
+   /* margin-right: 20px;
+    cursor: pointer;
+}*/
+nav .cloud{
+    width: 180px;
+    cursor: pointer;
+    left: 100px;
+    height: 200%;
+    margin: -100px;
+    margin-top: 5px;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 -1px;
+    font-size:medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #aab7b7;
+    padding: 8px 25px;
+   /* background-color:#efefef ;*/
+    transition: all 0.5 ease;
+
+}
+
+nav ul li a:hover{
+    background-color: #aab7b7;
+    color: #000000;
+    box-shadow: 0 5 10 #aab7b7;
+    border-radius: 20px;
+}
+/* for light button*/
+button{
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+    margin-left: 40px;
+    justify-content: space-between;
+    box-shadow: 1px 1px 15px  cyan;
+
+}
+button span{
+    display: block;
+    background: #999;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-left: 2px;
+    transition: background 0.5s, margin-left 0.5s;
+    
+
+
+}
+.lamp-container{
+   position: absolute;
+   /*top: 5px;
+   /*margin-top: -5px;*/
+    left: 22%;
+    width: 100px;
+
+}
+.lamp{
+
+    margin-left: 15%;
+   width: 100%;
+    max-width: 35%;
+    margin-top: -32px;
+   /* max-height: -00%;*/
+    
+
+
+}
+.light{
+    position: absolute;
+    margin-top: 21%;
+   margin-left: -92px;
+    transform: translateX(-50%);
+    /*width: 700px;*/
+   /*margin-left: -10px;*/
+   opacity: 0;
+   border-radius: 8px;
+   transition: opacity 0.5s ;
+   max-width: 35%;
+   max-height: 49%;
+}
+.wrapper{
+box-sizing: border-box;
+    min-height: 10px;
+   /* background-image: url('images/background23.jpg.jpg');*/
+   background-color: var(--blue-coloe);
+   /*for background of sign*/
+  /* height: 10px;*/
+    width: max(40px, 300px);
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50%;
+    margin-top: -200px;
+    
+}
+h1{
+    color: #aab7b7;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    
+}
+
+form{
+    
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form>div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--background-color);
+    fill: var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    border: 2px solid var(--color);
+    background-color: var(--color);
+
+    transition: 150ms ease;
+
+}
+form input:hover{
+border-color: var(--accent-color);
+}
+form input:focus{
+    outline: none;
+    border-color: var(#aab7b7);
+}
+div:has(input:focus) > label{
+    background-color: var(#aab7b7);
+}
+form input::placeholder{
+    color: var(#aab7b7);
+}
+form btn{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(#1a2d42);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+form btn:hover{
+    background-color: var(--color);
+
+}
+form btn:focus{
+    outline: none;
+    background-color: var(--color);
+}
+a{
+    
+    text-decoration: none;
+    font-weight: bold;
+    color: #aab7b7;
+}
+a:hover{
+    
+   /* text-decoration: underline;*/
+}
+@media (max-width: 1100px) {
+    .wrapper{
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+form div.incorrect label{
+background-color: #1a2d42;
+}
+form div.incorrect input{
+    border-color: #1a2d42;
+}
+.text-container{
+
+max-width: 400px;
+margin-top:-10%;
+margin-left: 600px;
+font-size:  20px;
+
+
+}
+.text-container h1{
+    margin-top: -20%;
+    font-size: 70px;
+    font-weight: 400;
+    color: #2e4156;
+}
+
+.text-container  a{
+    margin: 0 8%;
+    text-decoration: none;
+   /* background:#1a2d42 ;*/
+    padding: 10px 35px;
+    display: inline-block;
+    color: #aab7b7;
+    font-size: 18px;
+    margin-top: 30px;
+    border-radius: 20px;
+    left: 300px;
+    font-weight: bold;
+    transition: all 0.5 ease;
+
+
+}
+.text-container a:hover{
+    cursor: pointer;
+    box-shadow: 0 5 10 #aab7b7;
+    color: black;
+    background: #aab7b7;
+
+
+}
+.control{
+    margin-top: 180px;
+    margin-right: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.control .line{
+    width: 250px;
+    height: 4px;
+    background: #fff;
+    margin: 0 20px;
+}
+.control .line span{
+    width: 50%;
+    height: 8px;
+    margin-top: -2px;
+    border-radius: 4px;
+    background: #00986f;
+    display: block;
+}
+/*for button to move*/
+.active{
+    background:#1a2d42;
+}
+.active span{
+    background: #fff;
+    margin-left: 31px;
+    
+}
+.on{
+    opacity: 1;
+}
+
