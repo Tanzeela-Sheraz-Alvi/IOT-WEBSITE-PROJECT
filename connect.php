@@ -1,5 +1,3 @@
-<!--database connected file-->
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -19,7 +17,7 @@ if ($conn->connect_error) {
    $sql = "INSERT INTO form (firstname, email, passwor) VALUES ('$FN', '$E', '$P')";
    
    if ($conn->query($sql) === TRUE) {
-   //  echo "<script>alert ('New record created successfully')</script>";
+     echo "<script>alert ('New record created successfully')</script>";
    } 
      else
      {
