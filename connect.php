@@ -1,3 +1,4 @@
+<!--database connected file-->
 
 <?php
 $servername = "localhost";
@@ -10,22 +11,21 @@ $conn = new mysqli($servername, $username, $password, $db);
 
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-if (isset($_POST["submit"])){
-    $firstname=$_POST['Firstname'];
-    $email=$_POST['Email'];
-    $password=$_POST['Password'];
-    $repeatpassword=$_POST['Repeat-Password'];
-    $sql="INSERT INTO form (fname, email, pass, repeatpass) VALUES (' {$firstname}', '{$email}', ' {$password}', ' {$repeatpassword}')";
-   if ( mysqli_query ($conn ,$sql) )
-    {
-        echo "new record created";
+  die("Connection failed: " . $conn->connect_error); 
+ }
+   $FN = $_POST['firstname'];
+   $E = $_POST['email'];
+   $P = $_POST['passwor'];
+   $sql = "INSERT INTO form (firstname, email, passwor) VALUES ('$FN', '$E', '$P')";
+   
+   if ($conn->query($sql) === TRUE) {
+   //  echo "<script>alert ('New record created successfully')</script>";
+   } 
+     else
+     {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+   $conn->close();
+   ?>
 
-    }
-    else{
-        echo "error" . $sql . "<br>" .$conn->error;
-    }
-}
-$conn->close();
-?>
